@@ -12,7 +12,8 @@ const getInitialContacts = () => {
   if (savedContacts !== null) {
     return JSON.parse(savedContacts);
   }
-  return []; // можно null?
+  // return [];
+  return null; // можно null?
   // return savedContacts !== null ? JSON.parse(savedContacts) : [];
 };
 
