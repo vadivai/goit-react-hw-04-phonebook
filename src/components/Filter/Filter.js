@@ -17,14 +17,5 @@ export const Filter = ({ filter, onFilter }) => {
         </FormGroup>
       </Form>
     </Formik>
-
-    // <div>
-    //   <input
-    //     type="text"
-    //     value={filter}
-    //     onChange={evt => onFilter(evt.target.value)}
-    //     placeholder="Фільтр"
-    //   />
-    // </div>
   );
 };
