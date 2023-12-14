@@ -14,6 +14,8 @@ const getInitialContacts = () => {
   }
   return [];
   // другий варіант: return savedContacts !== null ? JSON.parse(savedContacts) : [];
+  // варіант від Владислава (через ??):
+  //const [contacts, setContacts] = useState(() => JSON.parse(localStorage.getItem('contacts')) ?? []);
 };
 
 export const App = () => {
