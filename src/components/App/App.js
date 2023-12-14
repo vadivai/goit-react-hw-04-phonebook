@@ -6,20 +6,23 @@ import { FormAddContact } from 'components/FormAddContact/FormAddContact';
 import { Section } from './App.styled';
 import { Filter } from 'components/Filter/Filter';
 
-const getInitialContacts = () => {
-  const savedContacts = window.localStorage.getItem('contacts');
+// const getInitialContacts = () => {
+//   const savedContacts = window.localStorage.getItem('contacts');
 
-  if (savedContacts !== null) {
-    return JSON.parse(savedContacts);
-  }
-  return [];
-  // другий варіант: return savedContacts !== null ? JSON.parse(savedContacts) : [];
-  // варіант від Владислава (через ??):
-  //const [contacts, setContacts] = useState(() => JSON.parse(localStorage.getItem('contacts')) ?? []);
-};
+//   if (savedContacts !== null) {
+//     return JSON.parse(savedContacts);
+//   }
+//   return [];
+// другий варіант: return savedContacts !== null ? JSON.parse(savedContacts) : [];
+// };
 
 export const App = () => {
-  const [contacts, setContacts] = useState(getInitialContacts);
+  // const [contacts, setContacts] = useState(getInitialContacts);
+
+  // варіант від Владислава без getInitialContacts
+  const [contacts, setContacts] = useState(
+    () => JSON.parse(localStorage.getItem('contacts')) ?? []
+  );
   const [filter, setFilter] = useState('');
 
   const filteredItems = contacts.filter(item => {
